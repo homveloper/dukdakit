@@ -2,5 +2,5 @@ module github.com/danghamo/dukdakit
 
 go 1.21
 
-// DukDakit v1.0.0 - 뚝딱키트
+// DukDakit v0.0.1 - 뚝딱키트 (Early Development)
 // Build production-ready game servers in a snap!

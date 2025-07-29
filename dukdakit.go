@@ -7,7 +7,7 @@
 package dukdakit
 
 // Version represents the current version of dukdakit
-const Version = "v1.0.0"
+const Version = "v0.0.1"
 
 // DukDakit is the main framework instance
 type DukDakit struct {

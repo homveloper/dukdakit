@@ -3,7 +3,7 @@
 > **DDUK DDAK Kit** - Build production-ready game servers in a snap!
 
 [![Go Version](https://img.shields.io/badge/go-%3E%3D1.21-blue.svg)](https://golang.org/)
-[![Version](https://img.shields.io/badge/version-v1.0.0-green.svg)](https://github.com/danghamo/dukdakit/releases)
+[![Version](https://img.shields.io/badge/version-v0.0.1-orange.svg)](https://github.com/danghamo/dukdakit/releases)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 ## ✨ What is DukDakit?
