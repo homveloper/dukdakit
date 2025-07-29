@@ -1,10 +1,14 @@
 # 🔨 DukDakit (뚝딱키트)
 
-> **DDUK DDAK Kit** - Build production-ready game servers in a snap!
+⚡ **Insanely easy** *game server framework* that makes building production-ready game servers ridiculously simple and fun for Go
 
 [![Go Version](https://img.shields.io/badge/go-%3E%3D1.21-blue.svg)](https://golang.org/)
-[![Version](https://img.shields.io/badge/version-v0.0.1-orange.svg)](https://github.com/danghamo/dukdakit/releases)
+[![Version](https://img.shields.io/badge/version-v0.0.1-orange.svg)](https://github.com/homveloper/dukdakit/releases)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
+[![Performance](https://img.shields.io/badge/performance-High-brightgreen.svg)]()
+[![Production Ready](https://img.shields.io/badge/production-ready-green.svg)]()
+[![Korean Spirit](https://img.shields.io/badge/korean-spirit-red.svg)]()
+[![GitHub stars](https://img.shields.io/github/stars/homveloper/dukdakit.svg?style=social&label=Star)](https://github.com/homveloper/dukdakit)
 
 ## ✨ What is DukDakit?
 
@@ -33,14 +37,14 @@ so you can focus on making fun games.
 
 ### Installation
 ```bash
-go get github.com/danghamo/dukdakit
+go get github.com/homveloper/dukdakit
 ```
 
 ### Hello DukDak
 ```go
 package main
 
-import "github.com/danghamo/dukdakit"
+import "github.com/homveloper/dukdakit"
 
 func main() {
     // 🔨 뚝딱! Create a game server
@@ -142,6 +146,6 @@ Inspired by the Korean philosophy of **빨리빨리** (quickly quickly) and the 
 
 Made with ❤️ in Korea 🇰🇷
 
-[GitHub](https://github.com/danghamo/dukdakit) • [Documentation](docs/) • [Examples](examples/)
+[GitHub](https://github.com/homveloper/dukdakit) • [Documentation](docs/) • [Examples](examples/)
 
 </div>
