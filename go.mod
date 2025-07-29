@@ -1,4 +1,4 @@
-module github.com/danghamo/dukdakit
+module github.com/homveloper/dukdakit
 
 go 1.21
 
