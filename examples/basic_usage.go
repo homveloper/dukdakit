@@ -3,7 +3,6 @@ package main
 import (
 	"context"
 	"fmt"
-	"log"
 	"time"
 
 	"github.com/homveloper/dukdakit"
@@ -33,31 +32,16 @@ func (e *ExampleEntity) SetVersion(version int64) {
 
 func main() {
 	fmt.Println("🔨 DukDakit Basic Usage Examples")
+	fmt.Printf("📦 Version: %s\n", dukdakit.Version)
 	fmt.Println()
 
-	// Example 1: Basic Framework Usage
-	basicFrameworkExample()
-
-	// Example 2: Optimistic Concurrency Control
+	// Example 1: Optimistic Concurrency Control
 	optimisticConcurrencyExample()
 
-	// Example 3: Retry Mechanisms
+	// Example 2: Retry Mechanisms
 	retryExample()
 }
 
-func basicFrameworkExample() {
-	fmt.Println("=== Basic Framework Usage ===")
-	
-	// Create DukDakit instance
-	server := dukdakit.New()
-	
-	// Start the server (placeholder implementation)
-	if err := server.Start(); err != nil {
-		log.Fatal(err)
-	}
-	
-	fmt.Println()
-}
 
 func optimisticConcurrencyExample() {
 	fmt.Println("=== Optimistic Concurrency Control Example ===")
