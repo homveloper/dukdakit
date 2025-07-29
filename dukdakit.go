@@ -8,6 +8,7 @@
 // Features are organized into categories accessible via dot notation:
 //   - dukdakit.Distributed.NewOptimistic() - Optimistic concurrency control
 //   - dukdakit.Retry.New()                 - Retry mechanisms with circuit breaker
+//   - dukdakit.Timex.DayElapsed()          - Time elapsed checking utilities
 //   - More categories coming soon...
 package dukdakit
 
