@@ -12,6 +12,21 @@ type PagitCategory struct{}
 // Pagit is the global instance for pagination features
 var Pagit = &PagitCategory{}
 
+// OffsetFromPage creates an OffsetConfig with default page size
+func (p *PagitCategory) OffsetFromPage(page int) OffsetConfig {
+	return pagit.OffsetFromPage(page)
+}
+
+// OffsetFromPageSize creates an OffsetConfig with default page 1
+func (p *PagitCategory) OffsetFromPageSize(pageSize int) OffsetConfig {
+	return pagit.OffsetFromPageSize(pageSize)
+}
+
+// NewOffsetConfig creates an OffsetConfig with validation
+func (p *PagitCategory) NewOffsetConfig(page, pageSize int) OffsetConfig {
+	return pagit.NewOffsetConfig(page, pageSize)
+}
+
 // PaginateCursor performs cursor-based pagination using a cursor provider
 //
 // This function provides cursor-based pagination which is ideal for:
@@ -24,7 +39,7 @@ var Pagit = &PagitCategory{}
 //
 //	// In-memory data
 //	users := []User{{ID: 1, Name: "Player1"}, {ID: 2, Name: "Player2"}}
-//	provider := dukdakit.Pagit.NewSliceCursorProvider(users, func(u User) int64 { return u.ID })
+//	provider := dukdakit.NewSliceCursorProvider(users, func(u User) int64 { return u.ID })
 //	
 //	config := dukdakit.CursorConfig[int64]{
 //	    PageSize: 20,
@@ -62,7 +77,7 @@ func PaginateCursor[T any, C comparable](
 //
 //	// In-memory data
 //	products := []Product{{ID: 1, Name: "Sword"}, {ID: 2, Name: "Shield"}}
-//	provider := dukdakit.Pagit.NewSliceProvider(products)
+//	provider := dukdakit.NewSliceProvider(products)
 //	
 //	config := dukdakit.OffsetConfig{
 //	    Page:     1,
@@ -119,20 +134,3 @@ const (
 	DefaultOffsetPageSize = pagit.DefaultOffsetPageSize
 	MaxPageSize          = pagit.MaxPageSize
 )
-
-// Configuration builders for common patterns
-
-// OffsetFromPage creates an OffsetConfig with default page size
-func OffsetFromPage(page int) OffsetConfig {
-	return pagit.OffsetFromPage(page)
-}
-
-// OffsetFromPageSize creates an OffsetConfig with default page 1
-func OffsetFromPageSize(pageSize int) OffsetConfig {
-	return pagit.OffsetFromPageSize(pageSize)
-}
-
-// NewOffsetConfig creates an OffsetConfig with validation
-func NewOffsetConfig(page, pageSize int) OffsetConfig {
-	return pagit.NewOffsetConfig(page, pageSize)
-}
