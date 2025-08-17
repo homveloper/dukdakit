@@ -11,16 +11,17 @@ type DistributedCategory struct{}
 var Distributed = &DistributedCategory{}
 
 // NewOptimistic creates a new optimistic concurrency controller
-// 
+//
 // Example usage:
-//   controller := dukdakit.Distributed.NewOptimistic()
-//   
-//   // With custom config:
-//   config := distributed.OptimisticConfig{
-//       MaxRetries: 5,
-//       RetryDelay: 200 * time.Millisecond,
-//   }
-//   controller := dukdakit.Distributed.NewOptimistic(config)
+//
+//	controller := dukdakit.Distributed.NewOptimistic()
+//
+//	// With custom config:
+//	config := distributed.OptimisticConfig{
+//	    MaxRetries: 5,
+//	    RetryDelay: 200 * time.Millisecond,
+//	}
+//	controller := dukdakit.Distributed.NewOptimistic(config)
 func (d *DistributedCategory) NewOptimistic(config ...distributed.OptimisticConfig) *distributed.OptimisticController {
 	return distributed.NewOptimistic(config...)
 }

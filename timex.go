@@ -137,3 +137,35 @@ func (t *TimexCategory) EST() *time.Location {
 func (t *TimexCategory) UTC() *time.Location {
 	return time.UTC
 }
+
+// Range splits a time interval into smaller ranges based on the given duration
+// 
+// This function divides a time period between start and end into multiple TimeRange
+// segments of the specified duration. It supports two splitting modes:
+// - Exact: Splits starting from the exact start time
+// - Aligned: Splits aligned to natural time boundaries (e.g., top of the hour)
+//
+// Example usage:
+//
+//	start := time.Date(2024, 1, 1, 14, 35, 20, 0, time.UTC)
+//	end := time.Date(2024, 1, 1, 17, 25, 40, 0, time.UTC)
+//
+//	// Basic aligned splitting (default) - aligns to natural boundaries
+//	ranges := dukdakit.Timex.Range(start, end, time.Hour)
+//	// Result: [15:00:00-16:00:00, 16:00:00-17:00:00]
+//
+//	// Exact splitting from start time
+//	ranges = dukdakit.Timex.Range(start, end, time.Hour, timex.WithExactSplit())
+//	// Result: [14:35:20-15:35:20, 15:35:20-16:35:20, 16:35:20-17:25:40]
+//
+//	// With trimming options to remove partial ranges
+//	ranges = dukdakit.Timex.Range(start, end, time.Hour, timex.WithTrim())
+//
+//	// For game mechanics like splitting event durations, cooldown periods, etc.
+//	eventStart := time.Now()
+//	eventEnd := eventStart.Add(3 * time.Hour)
+//	hourlyRewards := dukdakit.Timex.Range(eventStart, eventEnd, time.Hour)
+//	// Creates hourly reward intervals for the event
+func (t *TimexCategory) Range(start, end time.Time, duration time.Duration, options ...timex.RangeOption) []timex.TimeRange {
+	return timex.Range(start, end, duration, options...)
+}
