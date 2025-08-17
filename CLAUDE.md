@@ -10,10 +10,11 @@ DukDakit (뚝딱키트) is a game server framework for Go that aims to make buil
 
 DukDakit uses a category-based API structure with dot notation:
 - `dukdakit.Timex.*` - Time elapsed checking utilities for game cooldowns, daily resets
+- `dukdakit.Pagit.*` - Pagination utilities for cursor-based and offset-based pagination
 - `dukdakit.Distributed.*` - Distributed computing features (optimistic concurrency)
 - `dukdakit.Retry.*` - Retry mechanisms with circuit breaker support
 
-Each category is defined in its own file (e.g., `timex.go`, `distributed.go`, `retry.go`) with the actual implementation in the `internal/` directory.
+Each category is defined in its own file (e.g., `timex.go`, `pagit.go`, `distributed.go`, `retry.go`) with the actual implementation in the `internal/` directory.
 
 ## Development Commands
 
@@ -68,6 +69,12 @@ Examples:
 - Use descriptive assertion messages
 - Follow Arrange-Act-Assert pattern in test structure
 
+### Example Code Policy
+- **MANDATORY**: All usage examples MUST be provided in unit test code only
+- **PROHIBITED**: Creating separate example files or directories is forbidden
+- Test functions serve as both verification and documentation of API usage
+- Look at existing test files (e.g., `internal/timex/*_test.go`, `internal/pagit/*_test.go`) for usage patterns
+
 ## Key Implementation Patterns
 
 ### Category API Pattern
@@ -95,12 +102,13 @@ Timex provides timezone helpers for common game server timezones:
 
 ```
 dukdakit/
-├── *.go                    # Category API files (timex.go, distributed.go, retry.go)
+├── *.go                    # Category API files (timex.go, pagit.go, distributed.go, retry.go)
 ├── internal/              
 │   ├── timex/             # Time elapsed checking implementation
+│   ├── pagit/             # Pagination implementation
 │   ├── distributed/       # Optimistic concurrency implementation
 │   └── retry/             # Retry mechanisms implementation
-└── examples/              # Example usage files
+└── examples/              # Example usage files (deprecated - use test files for examples)
 ```
 
 ## Important Notes
